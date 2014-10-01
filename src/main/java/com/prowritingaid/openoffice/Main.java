@@ -139,8 +139,6 @@ public class Main extends WeakBase implements XJobExecutor,
 	      paRes.aDocumentIdentifier = docID;
 	      paRes.aText = paraText;
 	      paRes.aProperties = propertyValues;
-	      //int[] footnotePositions = getPropertyValues("FootnotePositions", propertyValues);  // since LO 4.3
-	      showMessage("Not happening");
 	      List<SingleProofreadingError> errors = new ArrayList<SingleProofreadingError>();
 	      if (paraText.indexOf("mistake")>=0){
 	    	  SingleProofreadingError aError = new SingleProofreadingError();
@@ -150,7 +148,7 @@ public class Main extends WeakBase implements XJobExecutor,
 	    	    aError.aSuggestions = new String[1];
 	    	    aError.aSuggestions[0] = "msitake";
 	    	    aError.nErrorStart = paraText.indexOf("mistake") + paRes.nStartOfSentencePosition;
-	    	    aError.nErrorLength = aError.nErrorStart+7;
+	    	    aError.nErrorLength = 7;
 	    	    aError.aRuleIdentifier = "MISTAKE";
 	    	  errors.add(aError);
 	      }
